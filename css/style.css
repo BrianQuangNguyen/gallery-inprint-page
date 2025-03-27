@@ -52,7 +52,6 @@
 }
 
 .productText {
-
     flex: 3;
 }
 
@@ -60,7 +59,6 @@
     text-align: left;
     align-items: flex-start;
 }
-
 
 .header-img{
     width: 100%;
