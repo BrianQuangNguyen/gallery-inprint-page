@@ -18,14 +18,19 @@
 
 .product {
     display: flex;
-    align-content: flex-start;
 }
 
 .pic {
     width: 20%;
+    flex: 1;
 }
 
 .productText {
+    text-align: left;
+    flex: 3;
+}
+
+.productText h2{
     text-align: left;
 }
 
