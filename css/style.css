@@ -5,6 +5,8 @@
     text-align: center;
 }
 /* Navbar */
+/* Overrides for base HTML */
+
 #nav {
     background: #333;
     padding: 10px 0;
@@ -78,3 +80,26 @@
     font-size: 100px; 
     text-align: center;
 }
+
+/* Utility classes */
+
+.flex {
+    display: flex;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.column-reverse {
+    flex-direction: column;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.row-reverse {
+    flex-direction: row;
+}
+
