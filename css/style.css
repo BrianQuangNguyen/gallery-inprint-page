@@ -5,9 +5,34 @@
     text-align: center;
 }
 
+/* Overrides for base HTML */
+
 #nav {
     background-color: grey;
     font-size: 24px;
     color: white;
     text-decoration: none;
 }
+
+/* Utility classes */
+
+.flex {
+    display: flex;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.column-reverse {
+    flex-direction: column;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.row-reverse {
+    flex-direction: row;
+}
+
