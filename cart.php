@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
-    // Handle "remove from cart"
+    // HAVE TO FIX! "remove from cart"
     if ($action === 'remove') {
         $productID = $_POST['productID'] ?? null;
         if ($productID && isset($_SESSION['cart'][$productID])) {
@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     exit;
 }
 
-// Fetch the cart contents and display them
+// FetchING the cart contents and display them
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $user_id = $_SESSION['user_id'] ?? null; // Ensure the user is logged in (optional)
 
@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                 WHERE cart.userID = '$user_id'";
         $result = $dbh->query($sql);
     } else {
-        // For guest users, retrieve items stored in session cart
+
         $productIDs = array_keys($_SESSION['cart']);
         if ($productIDs) {
             $productIDsString = implode(",", $productIDs);
@@ -75,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     
     if ($result && $result->rowCount() > 0) {
         while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-            $totalPrice = floatval($row['price']); // No multiplication needed
+            $totalPrice = floatval($row['price']); 
             echo '<tr>';
             echo '<td>' . $row['name'] . '</td>';
             echo '<td>' . $_SESSION['cart'][$row['productID']] . '</td>';
@@ -90,7 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     echo '</tbody>';
     echo '</table>';
 
-    // Calculate the total cost
+    // Calculating the total cost
     $totalCost = 0;
     if ($result && $result->rowCount() > 0) {
         foreach ($result as $row) {
@@ -100,7 +100,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
     echo '<h3>Total: $' . number_format($totalCost, 2) . '</h3>';
 
-    // Checkout button (optional)
+    // Checkout button (if we ever have a page)
     echo '<a href="checkout.php">Proceed to Checkout</a>';
 }
 ?>
