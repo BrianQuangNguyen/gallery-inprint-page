@@ -19,14 +19,13 @@
 
         <h1>Your Shopping Cart</h1>
 
-        <!-- Cart Table and Checkout -->
         <section id="cart-container">
-            <!-- Cart details will be displayed here -->
+        
         </section>
 
     </div>
     <script>
-        // Function to fetch and display the cart content
+
         function fetchCart() {
           fetch('cart.php', {
             method: 'GET'
@@ -38,7 +37,7 @@
           .catch(error => console.log('Error fetching cart:', error));
         }
       
-        // Call fetchCart when the page loads
+        
         window.addEventListener('load', fetchCart);
     </script>
 </body>

@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Check if the productID and quantity are valid
         if ($productID) {
-            // Add product to cart or update quantity if already in the cart
+            // Add product to cart or update quantity (if we implement that)
             if (isset($_SESSION['cart'][$productID])) {
                 $_SESSION['cart'][$productID] += $quantity;
             } else {
