@@ -8,9 +8,9 @@
  */
 try {
     $dbh = new PDO(
-        "mysql:host=localhost;dbname=fonga13_db",
-        "fonga13_local",
-        "fn!HrDB-"
+        "mysql:host=localhost;dbname=bijua5_db",
+        "root",
+        ""
     );
 } catch (Exception $e) {
     die("ERROR: Couldn't connect. {$e->getMessage()}");

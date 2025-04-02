@@ -19,13 +19,13 @@ include "connect.php";
 
 $num = filter_input(INPUT_GET, "numDisplayed", FILTER_VALIDATE_INT);
 
-$command = "SELECT `name`,`fileName`,`quantity`,`price`,`dimensions`,`description`,`date` FROM `products` WHERE `productID`>? ORDER BY `productID` LIMIT 5";
+$command = "SELECT `productID`, `name`,`fileName`,`quantity`,`price`,`dimensions`,`description`,`date` FROM `products` WHERE `productID`>? ORDER BY `productID` LIMIT 5";
 $stmt = $dbh->prepare($command);
 $success = $stmt->execute([$num]);
 
 $productList = [];
 while ($row = $stmt->fetch()){
-    $product = ["name" => $row["name"], "fileName" => $row["fileName"], "quantity" => $row["quantity"],"price" => $row["price"],"dimensions" => $row["dimensions"],"description" => $row["description"],"date" => $row["date"],];
+    $product = ["productID" => $row["productID"],"name" => $row["name"], "fileName" => $row["fileName"], "quantity" => $row["quantity"],"price" => $row["price"],"dimensions" => $row["dimensions"],"description" => $row["description"],"date" => $row["date"],];
     array_push($productList, $product);
 }
 

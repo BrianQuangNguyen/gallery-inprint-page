@@ -16,27 +16,30 @@ Created: 31/03/2025
 include "connect.php";
 
 // get the first 5 products from the database
-$command = "SELECT `name`,`fileName`,`quantity`,`price`,`dimensions`,`description`,`date` FROM `products` ORDER BY `productID` LIMIT 5";
+$command = "SELECT `productID`, `name`, `fileName`, `quantity`, `price`, `dimensions`, `description`, `date` 
+            FROM `products` 
+            ORDER BY `productID` 
+            LIMIT 5";
 $stmt = $dbh->prepare($command);
 $success = $stmt->execute();
 
 // create a string holding all the html elements to display the products
 $products = "";
 while ($row = $stmt->fetch()) {
-    $products .= "<div class=\"product\">
-                    <div class=\"leftTile\">
-                        <img class=\"pic\" src=\"images/{$row["fileName"]}\">
+    $products .= '<div class="product">
+                    <div class="leftTile">
+                        <img class="pic" src="images/' . $row["fileName"] . '">
                     </div>
-            
-                    <div class=\"rightTile\">
-                        <h2>{$row["name"]}</h2>
-                        <p>Quantity: {$row["quantity"]}</p>
-                        <p>Price: {$row["price"]}</p>
-                        <p>Dimensions: {$row["dimensions"]}</p>
-                        <p>Description: {$row["description"]}</p>
-                        <p>Date taken: {$row["date"]}</p>
+                    <div class="rightTile">
+                        <h2>' . $row["name"] . '</h2>
+                        <p>Quantity: ' . $row["quantity"] . '</p>
+                        <p>Price: ' . $row["price"] . '</p>
+                        <p>Dimensions: ' . $row["dimensions"] . '</p>
+                        <p>Description: ' . $row["description"] . '</p>
+                        <p>Date taken: ' . $row["date"] . '</p>
+                        <button onclick="addToCart(' . $row["productID"] . ', 1)">Add to Cart</button>
                     </div>
-                </div>";
+                </div>';
 }
 
 // productIDs are incremental so the last/highest value is the number of products there are

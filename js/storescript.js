@@ -70,3 +70,34 @@ window.addEventListener("load", function (event) {
             .then(success)
     })
 })
+
+function addToCart(productID, quantity) {
+    // Send the productID and quantity to cart.php using a POST request
+    fetch('cart.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: `action=add&productID=${productID}&quantity=${quantity}`
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert(data.message);  // Show confirmation message (e.g. Item added to cart)
+        fetchCart();  // Refresh cart contents after adding the item
+    })
+    .catch(error => console.log('Error adding item to cart:', error));
+}
+
+function fetchCart() {
+    fetch('cart.php', {
+        method: 'GET', // Change from POST to GET
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        }
+    })
+    .then(response => response.text()) // Expect text since cart.php directly outputs HTML
+    .then(html => {
+        document.getElementById('cart-container').innerHTML = html; // Update cart display
+    })
+    .catch(error => console.log('Error fetching cart:', error));
+}
