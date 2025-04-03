@@ -1,4 +1,5 @@
 <?php
+include "connect.php";
 session_start();
 if (isset($_SESSION['user'])) {
     header("Location: dashboard.php");
@@ -37,7 +38,7 @@ Account Login Page
         <input type="text" name="username" required><br>
         <label>Password:</label>
         <input type="password" name="password" required><br>
-        <button type="submit">Login</button>
+        <input type="submit">
     </form>
 </body>
 
