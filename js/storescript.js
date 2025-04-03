@@ -42,6 +42,7 @@ window.addEventListener("load", function (event) {
                                     <p>Dimensions: ${row["dimensions"]}</p>
                                     <p>Description: ${row["description"]}</p>
                                     <p>Date taken: ${row["date"]}</p>
+                                    <button onclick="addToCart(${row["productID"]}, 1)">Add to Cart</button>
                                 </div>
                             </div>`;
         }
