@@ -71,7 +71,7 @@ $productCount = $stmt->fetch()["productID"];
                 <li><a href="index.php"><img src="images/home.png" title="Home" alt="Home"></a></li>
                 <li><a href="store.php"><img src="images/shop.png" title="Shop" alt="Shop"></a></li>
                 <li><a href="cart.html"><img src="images/shopping-cart.png" title="Shopping Cart" alt="Shopping Cart"></a></li>
-                <li><a href="account.html"><img src="images/profile-picture.png" title="Account" alt="Account"></a></li>
+                <li><a href="account.php"><img src="images/profile-picture.png" title="Account" alt="Account"></a></li>
             </ul>
         </div>
         <h1>Shop</h1>
