@@ -13,7 +13,7 @@ Created: 31/03/2025
 - Includes a PHP script to get the info for the first 5 items to be displayed on page load
 */
 
-include "connect.php";
+include "connectXAMMP.php";
 
 // get the first 5 products from the database
 $command = "SELECT `productID`, `name`, `fileName`, `quantity`, `price`, `dimensions`, `description`, `date` 
@@ -68,7 +68,7 @@ $productCount = $stmt->fetch()["productID"];
     <div id="container">
         <div id="nav">
             <ul>
-                <li><a href="index.html"><img src="images/home.png" title="Home" alt="Home"></a></li>
+                <li><a href="index.php"><img src="images/home.png" title="Home" alt="Home"></a></li>
                 <li><a href="store.php"><img src="images/shop.png" title="Shop" alt="Shop"></a></li>
                 <li><a href="cart.html"><img src="images/shopping-cart.png" title="Shopping Cart" alt="Shopping Cart"></a></li>
                 <li><a href="account.html"><img src="images/profile-picture.png" title="Account" alt="Account"></a></li>

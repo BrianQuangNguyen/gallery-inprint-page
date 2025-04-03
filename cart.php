@@ -1,7 +1,7 @@
 <?php
 session_start(); // Start the session to store cart data
 
-include("connect.php");
+include("connectXAMMP.php");
 
 // Initialize the cart if it doesn't exist in the session
 if (!isset($_SESSION['cart'])) {
