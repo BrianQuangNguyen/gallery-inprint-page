@@ -102,3 +102,20 @@ function fetchCart() {
     })
     .catch(error => console.log('Error fetching cart:', error));
 }
+function removeFromCart(productID) {
+    fetch('removefromcart.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: `productID=${productID}`
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert("Item removed from cart!");
+            location.reload(); // Refresh the cart page
+        } else {
+            alert("Error removing item from cart.");
+        }
+    })
+    .catch(error => console.error('Error:', error));
+}
