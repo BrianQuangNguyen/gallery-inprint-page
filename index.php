@@ -1,5 +1,5 @@
 <?php
-include "connectXAMMP.php";
+include "connect.php";
 $command = "SELECT `fileName`FROM `products`";
 $stmt = $dbh->prepare($command);
 $success = $stmt->execute();
