@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (isset($_SESSION['user'])) {
+    header("Location: dashboard.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <!--
 Account Login Page
@@ -18,11 +26,19 @@ Account Login Page
                 <li><a href="index.php"><img src="images/home.png" title="Home" alt="Home"></a></li>
                 <li><a href="store.php"><img src="images/shop.png" title="Shop" alt="Shop"></a></li>
                 <li><a href="cart.html"><img src="images/shopping-cart.png" title="Shopping Cart" alt="Shopping Cart"></a></li>
-                <li><a href="account.html"><img src="images/profile-picture.png" title="Account" alt="Account"></a></li>               
+                <li><a href="account.php"><img src="images/profile-picture.png" title="Account" alt="Account"></a></li>               
             </ul>
         </div>
     </div>
 
+    <h1>Login</h1>
+    <form action="login.php" method="POST">
+        <label>Username:</label>
+        <input type="text" name="username" required><br>
+        <label>Password:</label>
+        <input type="password" name="password" required><br>
+        <button type="submit">Login</button>
+    </form>
 </body>
 
 </html>
