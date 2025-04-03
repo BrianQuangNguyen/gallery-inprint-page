@@ -13,7 +13,7 @@ Created: 31/03/2025
 - Includes a PHP script to get the info for the first 5 items to be displayed on page load
 */
 
-include "connectXAMMP.php";
+include "connect.php";
 
 // get the first 5 products from the database
 $command = "SELECT `productID`, `name`, `fileName`, `quantity`, `price`, `dimensions`, `description`, `date` 
