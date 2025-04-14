@@ -4,7 +4,7 @@ Gallery Inprint Store Page
 Team: Brick Plug
 Members: Aleina Elizabeth Biju, Abigail	Fong, Logan Lau-McLennan, Brian Nguyen
 
-Author: Abigail Fong (400567541)
+Authors: main function - Abigail Fong (400567541), shopping cart functions: Aleina Biju
 Created: 31/03/2025
 
 - The store page for the website
@@ -102,6 +102,7 @@ function fetchCart() {
     })
     .catch(error => console.log('Error fetching cart:', error));
 }
+
 function removeFromCart(productID) {
     fetch('removefromcart.php', {
         method: 'POST',
