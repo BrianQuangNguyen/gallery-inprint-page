@@ -47,7 +47,6 @@ if ($productIDs) {
 }
 
 // Display cart
-echo '<h2>Your Cart</h2>';
 echo '<table>';
 echo '<thead><tr><th>Product Name</th><th>Price</th><th>Action</th></tr></thead>';
 echo '<tbody>';

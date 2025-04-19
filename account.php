@@ -18,16 +18,28 @@ Account Login Page
     <meta name="viewport" content="width=device-width">
     <title>Your Account</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/navbar.js"></script>
 </head>
 
 <body>
     <div id="container">
+        <div id="mobileNav">
+            <img id="menu" src="images/menu.png" title="Menu" alt="Menu">
+            <ul id="navlinks">
+                <li><a href="index.php">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="shop.php">Shop</a></li>
+                <li><a href="cart.html">Your Cart</a></li>
+                <li><a href="account.php">Account Login</a></li>
+            </ul>
+        </div>
         <div id="nav">
             <ul>
                 <li><a href="index.php"><img src="images/home.png" title="Home" alt="Home"></a></li>
-                <li><a href="store.php"><img src="images/shop.png" title="Shop" alt="Shop"></a></li>
+                <li><a href="about.html"><img src="images/about.png" title="About Us" alt="About Us"></a></li>
+                <li><a href="shop.php"><img src="images/shop.png" title="Shop" alt="Shop"></a></li>
                 <li><a href="cart.html"><img src="images/shopping-cart.png" title="Shopping Cart" alt="Shopping Cart"></a></li>
-                <li><a href="account.php"><img src="images/profile-picture.png" title="Account" alt="Account"></a></li>               
+                <li><a href="account.php"><img src="images/profile-picture.png" title="Account" alt="Account"></a></li>
             </ul>
         </div>
     </div>

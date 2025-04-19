@@ -1,4 +1,27 @@
-window.addEventListener("load", function(){
+window.addEventListener("load", function () {
+
+    // responsive navbar
+    let menu = document.getElementById("menu");
+    let navlinks = document.getElementById("navlinks");
+
+    let open = false; // track whether the menu is open or not
+
+    menu.addEventListener("click", function (event) {
+        // toggle between showing the menu button with no links, or a close button and links
+        if (open) {
+            open = false;
+            menu.src = "images/menu.png"
+            navlinks.style.display = "none";
+        } else {
+            open = true;
+            menu.src = "images/x.png"
+            navlinks.style.display = "block";
+        }
+
+    })
+
+    // gallery functionality 
+
     const images = Array.from(document.querySelectorAll(".gallery-img"));
     const modalGallery = document.getElementById("modal-gallery");
     const modalImage = document.getElementById("modal-image");
@@ -17,12 +40,12 @@ window.addEventListener("load", function(){
         currentIndex = index;
         modalGallery.style.display = "block";
         modalImage.src = images[currentIndex].src;
-        modalCounter.textContent =(currentIndex + 1) + "/" + images.length;
+        modalCounter.textContent = (currentIndex + 1) + "/" + images.length;
     }
 
     // Add event listener for to each image that opens the modal box
-    images.forEach((img, index) =>{
-        img.addEventListener("click", function() {
+    images.forEach((img, index) => {
+        img.addEventListener("click", function () {
             showGallery(index);
         });
     });
@@ -33,31 +56,31 @@ window.addEventListener("load", function(){
     });
 
     // Add event listener to previous button that updates index and changes image
-    modalPrev.addEventListener("click", function() {
+    modalPrev.addEventListener("click", function () {
         if (currentIndex > 0) {
-            currentIndex = (currentIndex-1);
+            currentIndex = (currentIndex - 1);
         } else {
-            currentIndex = images.length-1;
+            currentIndex = images.length - 1;
         }
         modalImage.src = images[currentIndex].src;
-        modalCounter.textContent =(currentIndex+1) + "/" + images.length;
+        modalCounter.textContent = (currentIndex + 1) + "/" + images.length;
     });
 
     // Add event listener to next button that updates index and changes image
-    modalNext.addEventListener("click", function() {
+    modalNext.addEventListener("click", function () {
         if (currentIndex + 1 < images.length) {
-            currentIndex = (currentIndex+1);
+            currentIndex = (currentIndex + 1);
         } else {
             currentIndex = 0;
         }
         modalImage.src = images[currentIndex].src;
-        modalCounter.textContent =(currentIndex+1) + "/" + images.length;
+        modalCounter.textContent = (currentIndex + 1) + "/" + images.length;
 
     });
 
     // Add event listener that allows user to close modal box by clicking on blank space
-    window.addEventListener("click", function(event) {
-        if (event.target  === modalGallery) {
+    window.addEventListener("click", function (event) {
+        if (event.target === modalGallery) {
             modalGallery.style.display = "none";
         }
     });
