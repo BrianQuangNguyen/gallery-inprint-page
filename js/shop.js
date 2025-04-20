@@ -2,7 +2,7 @@
 Script file for shop.php
 
 - Contains the event listeners used to send AJAX requests to shopProcessing.php when buttons are pressed
-- Also contains functions used for the shopping cart features
+- Also makes navbar responsive and contains functions used for the shopping cart features
 
 Team: Brick Plug
 Members: Aleina Elizabeth Biju, Abigail	Fong, Logan Lau-McLennan, Brian Nguyen
@@ -12,16 +12,14 @@ Created: 31/03/2025
 */
 
 window.addEventListener("load", function (event) {
-
     // responsive navbar
     let menu = document.getElementById("menu");
     let navlinks = document.getElementById("navlinks");
 
-
     let open = false; // track whether the menu is open or not
 
     menu.addEventListener("click", function (event) {
-        // toggle between showing the menu button with no links, or a close button and links
+        // toggle between showing the menu button with no links, or a close button with links
         if (open) {
             open = false;
             menu.src = "images/menu.png"
@@ -31,7 +29,6 @@ window.addEventListener("load", function (event) {
             menu.src = "images/x.png"
             navlinks.style.display = "block";
         }
-
     })
 
     // AJAX request for shop page
@@ -113,7 +110,7 @@ window.addEventListener("load", function (event) {
         action = "sort";
 
         // send the sort order and send the number of products displayed as 0
-        // since it's going to clear all the current ones and replace them based on the new order
+        // since it's going to clear all the current products and replace them based on the new order
         console.log(order.value)
         let url = `shopProcessing.php?order=${order.value}&numDisplayed=0`;
 

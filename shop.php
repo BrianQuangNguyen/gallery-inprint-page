@@ -1,6 +1,6 @@
 <?php
 /* 
-Gallery Inprint Store Page
+Gallery Inprint Shop Page
 
 - Contains the relevant HTML elements needed for the page
 - Includes a PHP script to get the info for the first 5 items to be displayed on page load
@@ -25,7 +25,7 @@ if (!isset($_SESSION["currentlyDisplayed"])) {
     $_SESSION["numDisplayed"] = 0;
     $_SESSION["order"] = "None (Default)";
 
-    // get the first 5 products from the database
+    // get the first 5 products from the database and add them to the session variables
     $command = "SELECT * FROM `products` ORDER BY `productID` LIMIT 5";
     $stmt = $dbh->prepare($command);
     $success = $stmt->execute();

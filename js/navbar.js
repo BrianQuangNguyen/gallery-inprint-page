@@ -11,7 +11,6 @@ Created: 19/04/2025
 */
 
 window.addEventListener("load", function (event) {
-
     // responsive navbar
     let menu = document.getElementById("menu");
     let navlinks = document.getElementById("navlinks");
