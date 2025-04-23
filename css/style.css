@@ -314,6 +314,12 @@ a {
     #modal-close {
         font-size: 28px;
     }
+
+    .gallery img {
+        width: 90%;
+  
+    
+    }
 }
 
 @media (max-width: 600px) {
