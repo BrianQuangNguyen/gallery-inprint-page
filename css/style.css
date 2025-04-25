@@ -5,6 +5,17 @@
     text-align: center;
 }
 
+h1, h2, h3 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* About Us page */
+
+.narrow {
+    max-width: 60%;
+}
+
 /* Navbar */
 
 #nav {
@@ -100,7 +111,8 @@
 }
 
 input[type="submit"] {
-    font-size: 24px;
+    font-size: 18px;
+    margin: 1%
 }
 
 .rightTile * {
@@ -265,7 +277,7 @@ tr:nth-child(even) {
 
 a {
     text-decoration: none;
-    color: red;
+    /* color: red; */
 }
 
 /* Utility classes */
@@ -352,6 +364,7 @@ a {
     }
 
     /* Navbar for Mobile*/
+
     #mobileNav {
         display: block;
 
