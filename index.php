@@ -1,4 +1,17 @@
 <?php
+/* 
+Gallery Inprint Index Page
+
+- Using php load image names from a database table
+- Uses loaded image names to display a gallery of images
+- Using a modal box to allow the user to cycle through a gallery of images
+
+Team: Brick Plug
+Members: Aleina Elizabeth Biju, Abigail	Fong, Logan Lau-McLennan, Brian Nguyen
+
+Author: Brian Nguyen (nguyeb57)
+Created: 31/03/2025
+*/
 include "connect.php";
 $command = "SELECT `fileName`FROM `products`";
 $stmt = $dbh->prepare($command);
@@ -7,9 +20,6 @@ $success = $stmt->execute();
 
 ?>
 <!DOCTYPE html>
-<!--
-Home/Gallery Page
--->
 <html>
 
 <head>

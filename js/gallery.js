@@ -1,13 +1,25 @@
+/* 
+Gallery Inprint Store Page
+
+Team: Brick Plug
+Members: Aleina Elizabeth Biju, Abigail	Fong, Logan Lau-McLennan, Brian Nguyen
+
+Author: Brian Nguyen (nguyeb57)
+Created: 31/03/2025
+
+- Logic behind navbar and gallery scrolling
+*/
+
 window.addEventListener("load", function () {
 
-    // responsive navbar
+    // Responsive navbar
     let menu = document.getElementById("menu");
     let navlinks = document.getElementById("navlinks");
 
     let open = false; // track whether the menu is open or not
 
     menu.addEventListener("click", function (event) {
-        // toggle between showing the menu button with no links, or a close button and links
+        // Toggle between showing the menu button with no links, or a close button and links
         if (open) {
             open = false;
             menu.src = "images/menu.png"
@@ -20,7 +32,7 @@ window.addEventListener("load", function () {
 
     })
 
-    // gallery functionality 
+    // Gallery functionality 
 
     const images = Array.from(document.querySelectorAll(".gallery-img"));
     const modalGallery = document.getElementById("modal-gallery");
