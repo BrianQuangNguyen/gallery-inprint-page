@@ -1,7 +1,18 @@
+<!-- 
+Gallery Inprint Cart Functions
+
+Team: Brick Plug
+Members: Aleina Elizabeth Biju, Abigail	Fong, Logan Lau-McLennan, Brian Nguyen
+
+Author: Aleina Elizabeth Biju
+Created: 19/04/2025
+-->
+
+
 <?php
 session_start(); // Start the session to store cart data
 
-include("connect.php");
+include "connect.php";
 
 // Initialize the cart if it doesn't exist in the session
 if (!isset($_SESSION['cart'])) {

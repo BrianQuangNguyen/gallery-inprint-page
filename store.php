@@ -2,18 +2,18 @@
 /* 
 Gallery Inprint Store Page
 
+- The store page for the website
+- Contains the relevant HTML elements needed for the page
+- Includes a PHP script to get the info for the first 5 items to be displayed on page load
+
 Team: Brick Plug
 Members: Aleina Elizabeth Biju, Abigail	Fong, Logan Lau-McLennan, Brian Nguyen
 
 Author: Abigail Fong (400567541)
 Created: 31/03/2025
-
-- The store page for the website
-- Contains the relevant HTML elements needed for the page
-- Includes a PHP script to get the info for the first 5 items to be displayed on page load
 */
 
-include "connectXAMMP.php";
+include "util/connect.php";
 
 // get the first 5 products from the database
 $command = "SELECT `productID`, `name`, `fileName`, `quantity`, `price`, `dimensions`, `description`, `date` 

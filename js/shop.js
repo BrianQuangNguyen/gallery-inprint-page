@@ -122,7 +122,7 @@ window.addEventListener("load", function (event) {
 
 function addToCart(productID, quantity) {
     // Send the productID and quantity to cart.php using a POST request
-    fetch('cart.php', {
+    fetch('util/cart.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
@@ -138,7 +138,7 @@ function addToCart(productID, quantity) {
 }
 
 function fetchCart() {
-    fetch('cart.php', {
+    fetch('util/cart.php', {
         method: 'GET', // Change from POST to GET
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'

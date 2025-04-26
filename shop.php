@@ -13,7 +13,7 @@ Author: Abigail Fong (400567541)
 Created: 31/03/2025
 */
 
-include "connect.php";
+include "util/connect.php";
 session_start();
 
 // if session variables aren't set then the user is visiting the page for the first time

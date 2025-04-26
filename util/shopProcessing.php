@@ -23,7 +23,7 @@ $num = filter_input(INPUT_GET, "numDisplayed", FILTER_VALIDATE_INT);
 // error checking on GET parameters
 if ($order === NULL || $num === NULL || $num === false) {
     // redirect to error page if parameters are not received/invalid
-    header('Location: error.html');
+    header('Location: ../error.html');
 } else {
     // create the command based on the indicated sorting order
     if ($order === "None (Default)") {
@@ -38,7 +38,7 @@ if ($order === NULL || $num === NULL || $num === false) {
         $command = "SELECT * FROM `products` ORDER BY `date` LIMIT 5 OFFSET :offset";
     } else {
         // redirect to error page if the order isn't one of the options from the dropdown menu
-        header('Location: error.html');
+        header('Location: ../error.html');
     }
 
     // prepare the command and input the offset value (which is the number of products currently displayed)

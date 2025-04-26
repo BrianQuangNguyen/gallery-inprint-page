@@ -15,7 +15,7 @@ Created: 31/03/2025
 
 header('Content-Type: application/json');
 
-include "connectXAMMP.php";
+include "connect.php";
 
 $num = filter_input(INPUT_GET, "numDisplayed", FILTER_VALIDATE_INT);
 
