@@ -96,7 +96,7 @@ window.addEventListener("load", function (event) {
         // send the sort order and number of products currently being displayed
         // so that the SQL command can use it to determine which items are to be shown next
         console.log(order.value)
-        let url = `shopProcessing.php?order=${order.value}&numDisplayed=${numDisplayed.innerHTML}`;
+        let url = `util/shopProcessing.php?order=${order.value}&numDisplayed=${numDisplayed.innerHTML}`;
 
         fetch(url)
             .then(response => response.json())
@@ -112,7 +112,7 @@ window.addEventListener("load", function (event) {
         // send the sort order and send the number of products displayed as 0
         // since it's going to clear all the current products and replace them based on the new order
         console.log(order.value)
-        let url = `shopProcessing.php?order=${order.value}&numDisplayed=0`;
+        let url = `util/shopProcessing.php?order=${order.value}&numDisplayed=0`;
 
         fetch(url)
             .then(response => response.json())

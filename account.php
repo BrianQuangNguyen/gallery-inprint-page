@@ -7,13 +7,18 @@ Gallery Inprint Error Page
 Team: Brick Plug
 Members: Aleina Elizabeth Biju, Abigail	Fong, Logan Lau-McLennan, Brian Nguyen
 
+<<<<<<< Updated upstream
 Author: Abigail Fong (400567541)
+=======
+Author: Logan Lau-McLennan (400589565)
+>>>>>>> Stashed changes
 Created: 19/04/2025
 -->
 
 <?php
 include 'util/connect.php';
 
+<<<<<<< Updated upstream
 $message = "";
 $toastClass = "";
 
@@ -48,6 +53,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $checkUserStmt->close();
     $conn->close();
+=======
+// Check if the user is already logged in
+session_start();
+if (isset($_SESSION['account_loggedin'])) {
+    header("Location: dashboard.php"); // If so, redirect to dashboard
+    exit();
+>>>>>>> Stashed changes
 }
 ?>
 
@@ -79,13 +91,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <li><a href="index.php"><img src="images/home.png" title="Home" alt="Home"></a></li>
                 <li><a href="about.html"><img src="images/about.png" title="About Us" alt="About Us"></a></li>
                 <li><a href="shop.php"><img src="images/shop.png" title="Shop" alt="Shop"></a></li>
-                <li><a href="cart.html"><img src="images/shopping-cart.png" title="Shopping Cart" alt="Shopping Cart"></a></li>
+                <li><a href="cart.html"><img src="images/shopping-cart.png" title="Shopping Cart"
+                            alt="Shopping Cart"></a></li>
                 <li><a href="account.php"><img src="images/profile-picture.png" title="Account" alt="Account"></a></li>
             </ul>
         </div>
     </div>
 
     <h1>Login</h1>
+<<<<<<< Updated upstream
     <div class="container p-5 d-flex flex-column align-items-center">
         <?php if ($message): ?>
             <div class="toast align-items-center text-white border-0" 
@@ -141,6 +155,55 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             return new bootstrap.Toast(toastEl, { delay: 3000 });
         });
         toastList.forEach(toast => toast.show());
+=======
+    <div class="login">
+        <form id="login-form">
+
+            <label class="form-label" for="email">Email</label>
+            <div class="form-group">
+                <input class="form-input" type="text" name="email" placeholder="Email" id="email" required>
+            </div>
+
+            <label class="form-label" for="password">Password</label>
+            <div class="form-group">
+                <input class="form-input" type="password" name="password" placeholder="Password" id="password" required>
+            </div>
+
+            <button type="submit">Login</button>
+
+            <p>Don't have an account? <a href="register.php">Register</a></p>
+
+        </form>
+        <div id="message" style="color: red; font-size: 14px; margin-top: 10px;"></div>
+    </div>
+
+    <script>
+        window.onload = function () {
+            // Add event listener to the login form
+            document.getElementById("login-form").addEventListener("submit", function (event) {
+                event.preventDefault(); // Stop the form from submitting normally
+
+                // Get the email and password values
+                const formData = new FormData(this);
+
+                fetch('util/authenticate.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.text())
+                .then(data => {
+                    if(data.trim() === 'success') {
+                        window.location.href = 'dashboard.php'; // Redirect to dashboard on success
+                    } else {
+                        document.getElementById('message').innerHTML = data; // Display error message
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            });
+        };
+>>>>>>> Stashed changes
     </script>
 </body>
 
