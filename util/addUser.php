@@ -36,7 +36,7 @@ if (isset($_POST['email'], $_POST['password'])) {
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
     // Insert the new user into the database
-    $stmt = $dbh->prepare('INSERT INTO accounts (email, password, admin) VALUES (?, ?, ?)');
+    $stmt = $dbh->prepare('INSERT INTO accounts (email, password, admin, registered) VALUES (?, ?, ?, CURDATE())');
     $stmt->execute([$email, $hashedPassword, 0]); // By default, users are not admins (admin = 0)
 
     // On successful registration, log the user in automatically
