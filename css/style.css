@@ -370,6 +370,10 @@ a {
         width: 40%;
     }
 
+    .row {
+        flex-direction: column;
+    }
+
     /* Navbar for Mobile*/
 
     #mobileNav {
