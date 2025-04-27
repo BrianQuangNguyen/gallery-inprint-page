@@ -1,3 +1,13 @@
+<!--
+PHP Script to authenticate users during login.
+Most code sourced from https://codeshack.io/secure-login-system-php-mysql
+
+Team: Brick Plug
+Members: Aleina Elizabeth Biju, Abigail	Fong, Logan Lau-McLennan, Brian Nguyen
+
+By: Logan Lau-McLennan (400589565)
+-->
+
 <?php
 // Start the session
 session_start();
@@ -33,7 +43,8 @@ if ($stmt) {
             $_SESSION['account_email'] = $_POST['email'];
             $_SESSION['account_id'] = $id;
             $_SESSION['account_admin'] = $account['admin'];
-            echo 'success'; // Success code to return to the dashboard
+            echo 'success'; // Success code to be interpreted by the JS
+            // Redirect to the dashboard or any other page
         } else {
             // Incorrect password
             echo 'Incorrect email and/or password!';

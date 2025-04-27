@@ -1,8 +1,9 @@
 <!-- 
 Gallery Inprint Account Page
 
-- An HTML page which the user is directed to if any error occurs when receiving HTTP paramters
-- Provides the user with a link to return to the site's homepage
+- Registration page for new users
+- Uses most of the HTML from account.php
+- 
 
 Team: Brick Plug
 Members: Aleina Elizabeth Biju, Abigail	Fong, Logan Lau-McLennan, Brian Nguyen
@@ -28,7 +29,7 @@ if (isset($_SESSION['account_loggedin'])) {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Your Account</title>
+    <title>Register</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/navbar.js"></script>
 </head>
@@ -57,26 +58,27 @@ if (isset($_SESSION['account_loggedin'])) {
         </div>
     </div>
 
-    <h1>Login</h1>
+    <h1>Member Register</h1>
     <div class="login">
-        <form id="login-form">
 
+        <form id="login-form">
+            
             <label class="form-label" for="email">Email</label>
             <div class="form-group">
-                <input class="form-input" type="text" name="email" placeholder="Email" id="email" required>
+                <input class="form-input" type="email" name="email" placeholder="Email" id="email" required>
             </div>
 
             <label class="form-label" for="password">Password</label>
             <div class="form-group">
-                <input class="form-input" type="password" name="password" placeholder="Password" id="password" required>
+                <input class="form-input" type="password" name="password" placeholder="Password" id="password" autocomplete="new-password" required>
             </div>
 
-            <button type="submit">Login</button>
+            <button type="submit">Register</button>
 
-            <p>Don't have an account? <a href="register.php">Register</a></p>
+            <p class="register-link">Already have an account? <a href="account.php" class="form-link">Login</a></p>
 
         </form>
-        <div id="message" style="color: red; font-size: 14px; margin-top: 10px;"></div>
+
     </div>
 
     <script>
@@ -88,7 +90,7 @@ if (isset($_SESSION['account_loggedin'])) {
                 // Get the email and password values
                 const formData = new FormData(this);
 
-                fetch('util/authenticate.php', {
+                fetch('util/addUser.php', {
                     method: 'POST',
                     body: formData
                 })

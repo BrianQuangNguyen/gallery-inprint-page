@@ -1,4 +1,6 @@
 <?php
+// Logout script to end the session and redirect the user to the login page
+
 // Start the session
 session_start();
 // Get rid of session variables related to the account

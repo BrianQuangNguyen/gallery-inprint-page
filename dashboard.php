@@ -110,7 +110,7 @@ if (!isset($_SESSION['account_loggedin'])) {
 
             const formData = new FormData(this);
 
-            fetch('util/upload_image.php', {
+            fetch('util/uploadImage.php', {
                 method: 'POST',
                 body: formData
             })
@@ -130,7 +130,7 @@ if (!isset($_SESSION['account_loggedin'])) {
 
             const formData = new FormData(this);
 
-            fetch('util/upload_product.php', {
+            fetch('util/uploadProduct.php', {
                 method: 'POST',
                 body: formData
             })
