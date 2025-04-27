@@ -339,6 +339,10 @@ a {
     .gallery img {
         width: 90%;
     }
+
+    .row {
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 600px) {
@@ -368,10 +372,6 @@ a {
     #modal-prev,
     #modal-next {
         width: 40%;
-    }
-
-    .row {
-        flex-direction: column;
     }
 
     /* Navbar for Mobile*/
