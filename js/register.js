@@ -1,15 +1,3 @@
-/* 
-Script file for login.php
-
-- Contains the event listeners used to send AJAX requests to authenticate.php when buttons are pressed
-
-Team: Brick Plug
-Members: Aleina Elizabeth Biju, Abigail	Fong, Logan Lau-McLennan, Brian Nguyen
-
-Authors: Logan Lau-McLennan (400589565)
-Created: 31/03/2025
-*/
-
 window.onload = function () {
     // Add event listener to the login form
     document.getElementById("login-form").addEventListener("submit", function (event) {
@@ -18,7 +6,7 @@ window.onload = function () {
         // Get the email and password values
         const formData = new FormData(this);
 
-        fetch('util/authenticate.php', {
+        fetch('util/addUser.php', {
             method: 'POST',
             body: formData
         })
@@ -26,7 +14,6 @@ window.onload = function () {
         .then(data => {
             console.log('Response from PHP:', data);
             if(data.trim() === 'success') {
-                console.log('Login successful!');
                 window.location.href = 'dashboard.php'; // Redirect to dashboard on success
             } else {
                 document.getElementById('message').innerHTML = data; // Display error message
