@@ -1,17 +1,16 @@
-<!-- 
+<?php
+/*
 Gallery Inprint Account Page
 
-- An HTML page which the user is directed to if any error occurs when receiving HTTP paramters
-- Provides the user with a link to return to the site's homepage
+This is the account page for the website. It allows users to log in to their account. 
 
 Team: Brick Plug
 Members: Aleina Elizabeth Biju, Abigail	Fong, Logan Lau-McLennan, Brian Nguyen
 
 Author: Logan Lau-McLennan (400589565)
 Created: 26/04/2025
--->
+*/
 
-<?php
 include 'util/connect.php';
 
 // Check if the user is already logged in
@@ -94,7 +93,9 @@ if (isset($_SESSION['account_loggedin'])) {
                 })
                 .then(response => response.text())
                 .then(data => {
+                    console.log('Response from PHP:', data);
                     if(data.trim() === 'success') {
+                        console.log('Login successful!');
                         window.location.href = 'dashboard.php'; // Redirect to dashboard on success
                     } else {
                         document.getElementById('message').innerHTML = data; // Display error message

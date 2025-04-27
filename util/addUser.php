@@ -1,4 +1,14 @@
 <?php
+/*
+PHP Script to add new users to the database.
+
+Team: Brick Plug
+Members: Aleina Elizabeth Biju, Abigail	Fong, Logan Lau-McLennan, Brian Nguyen
+
+By: Logan Lau-McLennan (400589565)
+Created: 26/04/2025
+*/
+
 session_start();
 require 'connect.php';
 

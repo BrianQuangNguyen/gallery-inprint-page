@@ -1,11 +1,14 @@
-<!--
+<?php
+/*
 PHP script to handle image uploads in the admin dashboard. This script only works if the session variables indicate that the user is an admin.
+
+Team: Brick Plug
+Members: Aleina Elizabeth Biju, Abigail	Fong, Logan Lau-McLennan, Brian Nguyen
 
 By: Logan Lau-McLennan (400589565)
 Created: 26/04/2025
--->
+*/
 
-<?php
 session_start();
 require 'connect.php';
 

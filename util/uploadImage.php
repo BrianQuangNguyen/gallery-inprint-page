@@ -1,13 +1,16 @@
-<!--
+<?php
+/*
 PHP script to handle image uploads in the admin dashboard. 
 It checks if the user is logged in and has admin privileges, validates the uploaded file type, and moves the file to the specified directory. 
 If successful, it returns a success message; otherwise, it returns an error message.
 
+Team: Brick Plug
+Members: Aleina Elizabeth Biju, Abigail	Fong, Logan Lau-McLennan, Brian Nguyen
+
 By: Logan Lau-McLennan (400589565)
 Created: 26/04/2025
--->
+*/
 
-<?php
 session_start();
 if (empty($_SESSION['account_loggedin']) || empty($_SESSION['account_admin'])) {
     exit('Unauthorized.');

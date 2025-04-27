@@ -1,4 +1,5 @@
-<!-- 
+<?php
+/*
 Gallery Inprint Account Page
 
 - Registration page for new users
@@ -10,9 +11,8 @@ Members: Aleina Elizabeth Biju, Abigail	Fong, Logan Lau-McLennan, Brian Nguyen
 
 Author: Logan Lau-McLennan (400589565)
 Created: 26/04/2025
--->
+*/
 
-<?php
 include 'util/connect.php';
 
 // Check if the user is already logged in
@@ -96,6 +96,7 @@ if (isset($_SESSION['account_loggedin'])) {
                 })
                 .then(response => response.text())
                 .then(data => {
+                    console.log('Response from PHP:', data);
                     if(data.trim() === 'success') {
                         window.location.href = 'dashboard.php'; // Redirect to dashboard on success
                     } else {

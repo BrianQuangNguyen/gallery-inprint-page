@@ -1,8 +1,8 @@
 <!-- 
 Gallery Inprint Error Page
 
-- An HTML page which the user is directed to if any error occurs when receiving HTTP paramters
-- Provides the user with a link to return to the site's homepage
+This is the user dashboard. It doesn't have any functionality for normal users.
+Admins can add images to the file system and add products to the database from here.
 
 Team: Brick Plug
 Members: Aleina Elizabeth Biju, Abigail	Fong, Logan Lau-McLennan, Brian Nguyen
@@ -55,7 +55,7 @@ if (!isset($_SESSION['account_loggedin'])) {
     <div id="admin-controls">
         <?php
         // Fetch admin status for this user
-        if (isset($_SESSION['account_admin'])) {
+        if (!empty($_SESSION["account_admin"])) {
             // If admin is true (1), show admin controls
             // The reason I do this is to prevent the admin controls from being for non-admin users
             echo 
@@ -91,7 +91,7 @@ if (!isset($_SESSION['account_loggedin'])) {
     </div>
 
     <script>
-        document.getElementById('image-input').addEventListener('change', function() {
+        document.getElementById('image-input')?.addEventListener('change', function() {
             const preview = document.getElementById('preview');
             preview.innerHTML = ''; // Clear old preview
 
@@ -105,7 +105,7 @@ if (!isset($_SESSION['account_loggedin'])) {
             }
         });
 
-        document.getElementById('upload-form').addEventListener('submit', function(event) {
+        document.getElementById('upload-form')?.addEventListener('submit', function(event) {
             event.preventDefault();
 
             const formData = new FormData(this);
@@ -125,7 +125,7 @@ if (!isset($_SESSION['account_loggedin'])) {
             });
         });
 
-        document.getElementById('product-form').addEventListener('submit', function(event) {
+        document.getElementById('product-form')?.addEventListener('submit', function(event) {
             event.preventDefault();
 
             const formData = new FormData(this);
