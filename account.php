@@ -29,7 +29,6 @@ if (isset($_SESSION['account_loggedin'])) {
     <meta name="viewport" content="width=device-width">
     <title>Your Account</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/navbar.js"></script>
     <script src="js/login.js"></script>
 </head>
 

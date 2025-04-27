@@ -1,5 +1,5 @@
 <!-- 
-Gallery Inprint Error Page
+Gallery Inprint Dashboard Page
 
 This is the user dashboard. It doesn't have any functionality for normal users.
 Admins can add images to the file system and add products to the database from here.

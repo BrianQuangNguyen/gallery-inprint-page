@@ -12,6 +12,7 @@ Members: Aleina Elizabeth Biju, Abigail	Fong, Logan Lau-McLennan, Brian Nguyen
 Author: Brian Nguyen (nguyeb57)
 Created: 31/03/2025
 */
+
 include "util/connect.php";
 $command = "SELECT `fileName`FROM `products`";
 $stmt = $dbh->prepare($command);

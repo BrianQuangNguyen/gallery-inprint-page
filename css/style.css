@@ -1,3 +1,13 @@
+/*  
+Gallery Inprint Style Sheet
+
+Team: Brick Plug
+Members: Aleina Elizabeth Biju, Abigail	Fong, Logan Lau-McLennan, Brian Nguyen
+
+Author: all members
+Created: 31/03/2025
+*/
+
 * {
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
@@ -277,7 +287,6 @@ tr:nth-child(even) {
 
 a {
     text-decoration: none;
-    /* color: red; */
 }
 
 /* Utility classes */
@@ -329,8 +338,6 @@ a {
 
     .gallery img {
         width: 90%;
-  
-    
     }
 }
 
@@ -367,7 +374,6 @@ a {
 
     #mobileNav {
         display: block;
-
     }
 
     #navlinks {

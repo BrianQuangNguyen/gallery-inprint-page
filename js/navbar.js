@@ -28,6 +28,5 @@ window.addEventListener("load", function (event) {
             menu.src = "images/x.png"
             navlinks.style.display = "block";
         }
-
     })
 })

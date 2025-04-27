@@ -4,7 +4,6 @@ Gallery Inprint Account Page
 
 - Registration page for new users
 - Uses most of the HTML from account.php
-- 
 
 Team: Brick Plug
 Members: Aleina Elizabeth Biju, Abigail	Fong, Logan Lau-McLennan, Brian Nguyen

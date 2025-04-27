@@ -1,5 +1,5 @@
 /* 
-Gallery Inprint Store Page
+Gallery Inprint Home Page
 
 Team: Brick Plug
 Members: Aleina Elizabeth Biju, Abigail	Fong, Logan Lau-McLennan, Brian Nguyen
