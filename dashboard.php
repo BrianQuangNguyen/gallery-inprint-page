@@ -7,7 +7,7 @@ Gallery Inprint Error Page
 Team: Brick Plug
 Members: Aleina Elizabeth Biju, Abigail	Fong, Logan Lau-McLennan, Brian Nguyen
 
-Author: Abigail Fong (400567541)
+Author: Logan Lau-McLennan (400589565)
 Created: 19/04/2025
 -->
 
@@ -51,8 +51,6 @@ if (!isset($_SESSION['account_loggedin'])) {
 
     <h2>Welcome to Your Dashboard</h2>
     <a href="util/logout.php">Logout</a>
-<<<<<<< Updated upstream
-=======
 
     <div id="admin-controls">
         <?php
@@ -148,7 +146,6 @@ if (!isset($_SESSION['account_loggedin'])) {
 
 
     </script>
->>>>>>> Stashed changes
 </body>
 
 </html>
